@@ -1,12 +1,31 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certamen 2</title>
+    <link rel="stylesheet" href="{% static 'myapp/css/bootstrap.css' %}"/>
+    <link rel="stylesheet" href="{% static 'myapp/css/estilos.css' %}" />
+    
 </head>
 <body>
-    
+    <div class="container-fluid fondobase" style="min-height: 100vh;">
+        <div class="row" style="height: 2vh; background-color: black;"></div>
+        <div class="row" id="header">
+            <div class="col-3"><a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Logo_UTFSM.png" alt="logousm" class="img-fluid" id="logousm"></a></div>
+            <div class="col-9"><h1 class="centro titulo"> <br>Sistema integrado de Notificaciones</h1></div>
+        </div>
+    <div class="row" style="height: 2vh; background-color: black;"></div>
+    <div class="row bg-light d-none d-md-block d-xxl-none">
+        <nav class="navbar navbar-light" style="background-color: #96ADC5;">
+            <div class="col-1"></div>
+            <a class="nav-item nav-link col-1 fuentenav" href="">Inicio</a>
+            <a class="nav-item nav-link col-1 fuentenav" href="{% url 'admin:index' %}">Administración</a>
+            <div class="col-9"></div>
+        </nav>
+    </div>
     
 </body>
 </html>

@@ -7,18 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certamen 2</title>
     <link rel="stylesheet" href="{% static 'myapp/css/bootstrap.css' %}"/>
-    <link rel="stylesheet" href="{% static 'myapp/css/estilos.css' %}" />
+    <link rel="stylesheet" href="{% static 'myapp/css/estilos.css' %}"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 </head>
 <body>
 
     <nav class="navbar navbar-light" style="background-color: #005E90;">
-        <div class="col-9"></div>
-        <a class="nav-item nav-link col-1 fuentenav" href="">Inicio</a>
-        <a class="nav-item nav-link col-1 fuentenav" href="{% url 'admin:index' %}">Proyectos</a>
-        <a class="nav-item nav-link col-1 fuentenav" href="">Iniciar Sesión</a>
+        <div class="col-3">
+        <img src="{% static 'myapp/img/BarraColores.png' %}" class= "img-fluid" alt="barracolores" style="max-height: 5vh;max-width: 10vw;">
+        <strong id="letras">PIE USM SVM</strong>
+        </div class="col-3">
+
+        <div class="col-6"></div>
+        <a class="nav-item nav-link col-1 fuentenav" href="" id="letras">Inicio</a>
+        <a class="nav-item nav-link col-1 fuentenav" href="" id="letras">Proyectos</a>
+        <a class="nav-item nav-link col-1 fuentenav" href="" id="letras">Iniciar Sesión</a>
         <div class="col-6"></div>
     </nav>
+
+    <div class="row">
+            <div class="container-fluid">
+                 <div class="col-lg-12"> <img id=svm src="{% static 'myapp/img/svm.jpg' %}" alt="svm"> </div>
+                 <div class="portal"> <h1><strong>Portal Iniciativas Estudiantiles</strong></h1></div>
+                 <div class="usm"> <h4>Universidad Santa María - Sede Viña del Mar</h4></div>
+                 <div> <button class="btn btn-primary"> Ver iniciativas </button> </div>
+            </div>
+        </div>
     
 </body>
 </html>

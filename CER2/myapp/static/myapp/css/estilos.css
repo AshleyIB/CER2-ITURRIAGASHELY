@@ -1,3 +1,45 @@
-.fondobase{
-    background-color: #D8DBE2;
+*{
+    margin: 0;
+    padding: 0;                                        
 }
+
+
+body{
+    font-family: Montserrat;
+}
+
+#letras{
+    color: #fff
+}
+
+.btn-primary{
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #e5b300;
+        color: #fff;
+    }
+
+.portal{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.usm{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #f4f4f4;
+}
+
+#svm{
+    height: 80vh;
+    width: 100%;
+    margin: 0;
+}
+

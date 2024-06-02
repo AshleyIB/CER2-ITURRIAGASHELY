@@ -20,20 +20,44 @@
         </div class="col-3">
 
         <div class="col-6"></div>
-        <a class="nav-item nav-link col-1 fuentenav" href="" id="letras">Inicio</a>
-        <a class="nav-item nav-link col-1 fuentenav" href="" id="letras">Proyectos</a>
-        <a class="nav-item nav-link col-1 fuentenav" href="" id="letras">Iniciar Sesión</a>
+        <a class="nav-item nav-link col-1 fuentenav" href="#inicio" id="letras">Inicio</a>
+        <a class="nav-item nav-link col-1 fuentenav" href="#proyectos" id="letras">Proyectos</a>
+        <a class="nav-item nav-link col-1 fuentenav" href="#sesion" id="letras">Iniciar Sesión</a>
         <div class="col-6"></div>
     </nav>
 
-    <div class="row">
+
+    <div class="row" id="inicio">
             <div class="container-fluid">
-                 <div class="col-lg-12"> <img id=svm src="{% static 'myapp/img/svm.jpg' %}" alt="svm"> </div>
-                 <div class="portal"> <h1><strong>Portal Iniciativas Estudiantiles</strong></h1></div>
-                 <div class="usm"> <h4>Universidad Santa María - Sede Viña del Mar</h4></div>
+                 <div class="col-lg-md-12"> <img id=svm src="{% static 'myapp/img/svm.jpg' %}" alt="svm"> </div>
+                 <div class="portal col-lg-md-12"> <h1><strong>Portal Iniciativas Estudiantiles</strong></h1></div>
+                 <div class="usm col-lg-md-12"> <h4>Universidad Santa María - Sede Viña del Mar</h4></div>
                  <div> <button class="btn btn-primary"> Ver iniciativas </button> </div>
             </div>
+       
+    </div>
+
+    <div class="row" id="proyectos">
+        <div class="container-fluid">
+            <div class="col-lg-md-12"> <h1 style="font-size: 3vw;font-weight: bolder;text-align: center;color: #e5b300;">Portafolio</h1></div>
+            <div class="col-lg-md-12"> <h1 style="font-size: 4vw;font-weight: bolder;text-align: center;">Proyectos presentados</h1></div>
         </div>
+    </div>
+
+    <div class="row" id="sesion" style="background-color: #005E90;">
+        <div class="container-fluid">
+            <div class="col-6"> <h1 style="font-size: 3vw;font-weight: bolder;text-align: center;color: #ffff;">Iniciar Sesión</h1> <p>  </p></div> 
+            <div class="col-6"> <p style="font-size: 1vw;text-align: left;color: #ffff;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam accusamus, corporis est repellendus id commodi, exercitationem numquam dolorum ipsa laboriosam aliquid suscipit officia, velit culpa illum rerum iure repellat odio.
+            Animi dolorum quisquam porro! Corporis, error? Ab necessitatibus iure repellendus eum, ex aliquid accusamus. Non, accusamus veritatis eos, illo quia quam, vel deleniti natus aut cum quo incidunt possimus iusto.
+            Veritatis fugiat fuga consequuntur voluptatem nisi delectus architecto totam dolor dicta mollitia, beatae esse facilis. Quis nisi dolor officia sed molestias, ex quaerat asperiores ullam tenetur quidem quae, dolorem optio.
+            Vel delectus cupiditate papu eius deserunt aliquid.</p> <p>  </p></div> 
+            <div class="col-6"> 
+                <div style="background-color: #ffff;">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
     
 </body>
 </html>

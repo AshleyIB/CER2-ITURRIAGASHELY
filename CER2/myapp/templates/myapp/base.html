@@ -40,6 +40,9 @@
 
     <div class="row" id="proyectos">
         <div class="container-fluid">
+
+            {%if tipo == "P" or tipo == "invitado"%}
+
             <div class="col-lg-md-12"> <h1 style="font-size: 3vw;font-weight: bolder;text-align: center;color: #e5b300;">Portafolio</h1></div>
             <div class="col-lg-md-12"> <h1 style="font-size: 4vw;font-weight: bolder;text-align: center;">Proyectos presentados</h1></div>
             
@@ -63,14 +66,16 @@
                       </tr>
                     {% endfor %}
                   </tbody>
-
             </table>
+            {%endif%}
 
         </div>
     </div>
 
     <div class="row" id="proyectos">
         <div class="container-fluid">
+
+            {%if tipo == "E"%}
             <div class="col-lg-md-12"> <h1 style="font-size: 3vw;font-weight: bolder;text-align: center;color: #e5b300;">Formulario</h1></div>
             <div class="col-lg-md-12"> <h1 style="font-size: 4vw;font-weight: bolder;text-align: center;">Ingresar proyecto</h1></div>
             <form action="{% url 'crearFormulario'%}" method="POST">
@@ -101,6 +106,7 @@
         
                 </div>
             </form>
+            {%endif%}
 
         </div>
 
@@ -116,7 +122,8 @@
             Vel delectus cupiditate papu eius deserunt aliquid.</p> <p>  </p></div> 
             <div class="formulario col-6">
                 {% if si != 2 %}
-                <form action="{% url 'login' %}" method="get">
+                <form action="{% url 'login' %}" method="POST">
+                    {% csrf_token %}
                     <label for="usuario" style="min-width: 200px;">Nombre de usuario:</label>
                     <input type="text" id="usuario" name="usuario">
                     <br><br>
@@ -131,13 +138,6 @@
                 {% if si == 3 %}
                 <p>Acceso Denegado.</p>
                 {%endif%}
-    
-                {% if si == 2 %}
-                <p>Acceso Concedido.</p>
-                <form action="{% url 'index' %}">
-                    <div class="d-grid gap-2 col-6"> <button class="btn btn-secondary" type="submit"> Iniciar Sesión </button> </div>
-                </form>
-                {% endif %}
             </div>
 
         </div>

@@ -27,21 +27,32 @@ def crearFormulario(request):
 
 
 def login(request):
-    users = []
-    nombre = request.GET.get('usuario')
-    contraseña = request.GET.get('contraseña')
+    tipo_usuario = "invitado"
+    proyectos= []
+    users = Usuario.objects.all()
+    nombre = request.POST.get('usuario')
+    contraseña = request.POST.get('contraseña')
     logeado = 1
     if (nombre != None) and (contraseña!=None):
         logeado = 3
 
     for usuario in users:
-        if usuario[0] == nombre:
-            if check_password(contraseña,usuario[1]):
+        if usuario.nombre == nombre:
+            if contraseña == usuario.contrasena:
+                tipo_usuario = usuario.tipo_usuario
                 logeado = 2
+
+    
+    for proyecto in Proyecto.objects.all():
+        proyectos.append(proyecto)
+    
+
     data={
         "Usuarios":users,
         "con":contraseña,
         "nombre":nombre,
-        "si":logeado
+        "si":logeado,
+        "tipo": tipo_usuario,
+        "proyectos": proyectos,
     }
-    return redirect("base", data)
+    return render(request,'myapp/base.html', data)

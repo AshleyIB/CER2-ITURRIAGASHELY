@@ -19,6 +19,6 @@ class Proyecto(models.Model):
 class Usuario(models.Model):
     nombre= models.CharField(max_length=50)
     contrasena= models.CharField(max_length=10)
-    tipo_usuario = models.CharField(max_length=10,choices=TIPO_USUARIO,default="E")
+    tipo_usuario = models.CharField(max_length=10,choices=TIPO_USUARIO,default="P")
     def __str__(self):
         return self.nombre

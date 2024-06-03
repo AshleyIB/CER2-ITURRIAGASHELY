@@ -24,29 +24,7 @@ def crearFormulario(request):
     nuevo_proyecto.save()
     return redirect("base")
 
-def index(request):
 
-    respuestaSegmento = request.GET.get('Segmento')
-    mostrar = False
-    for u in UsuarioSegmento.objects.all():
-        if u.usuario == request.user:
-            segmento_usuario = u.tipo_segmento
-            if (segmento_usuario in ["P"]):
-                mostrar = True
-
-    Usuario = request.user
-
-    segmentos={"Estudiante":'E',
-                "Profesor":'P',
-         }
-    
-    data={
-        "Segmentos":segmentos,
-        "respuestaSegmento":respuestaSegmento,
-        "Usuario":Usuario,
-        "mostrar":mostrar,
-    }
-    return redirect("base", data)
 
 def login(request):
     users = []
@@ -55,9 +33,6 @@ def login(request):
     logeado = 1
     if (nombre != None) and (contraseña!=None):
         logeado = 3
-
-    for u in User.objects.all():
-        users.append((u.username,u.password))
 
     for usuario in users:
         if usuario[0] == nombre:

@@ -32,10 +32,11 @@
                  <div class="col-lg-md-12"> <img id=svm src="{% static 'myapp/img/svm.jpg' %}" alt="svm"> </div>
                  <div class="portal col-lg-md-12"> <h1><strong>Portal Iniciativas Estudiantiles</strong></h1></div>
                  <div class="usm col-lg-md-12"> <h4>Universidad Santa María - Sede Viña del Mar</h4></div>
-                 <div> <button class="btn btn-primary"> Ver iniciativas </button> </div>
+                
             </div>
        
     </div>
+    <div class="row"> <div> <button class="btn btn-primary"> Ver iniciativas </button> </div></div>
 
     <div class="row" id="proyectos">
         <div class="container-fluid">
@@ -51,13 +52,25 @@
             Animi dolorum quisquam porro! Corporis, error? Ab necessitatibus iure repellendus eum, ex aliquid accusamus. Non, accusamus veritatis eos, illo quia quam, vel deleniti natus aut cum quo incidunt possimus iusto.
             Veritatis fugiat fuga consequuntur voluptatem nisi delectus architecto totam dolor dicta mollitia, beatae esse facilis. Quis nisi dolor officia sed molestias, ex quaerat asperiores ullam tenetur quidem quae, dolorem optio.
             Vel delectus cupiditate papu eius deserunt aliquid.</p> <p>  </p></div> 
-            <div class="col-6"> 
-                <div style="background-color: #ffff;">
-                    
-                </div>
+            <div class="formulario col-6">
+                <form method="post">
+                    <div class="email">
+                        <input type="text" required>
+                        <label>Email</label>
+                    </div>
+                    <br><br>
+                    <div class="contrasena">
+                        <input type="password" required>
+                        <label>Contraseña</label>   
+                    </div>
+                    <br>
+                    <div class="d-grid gap-2 col-6"> <button class="btn btn-secondary"> Iniciar Sesión </button> </div>
+                </form>
             </div>
+
         </div>
     </div>
+
     
 </body>
 </html>

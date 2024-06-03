@@ -54,12 +54,58 @@
                 </thead>
 
                 <tbody class="table-group-divider">
+                    {% for proyecto in proyectos%}
+                    <tr>
+                        <td>{{proyecto.nombreProyecto}}</td>
+                        <td>{{proyecto.estudiante}}</td>
+                        <td>{{proyecto.tema}}</td>
+                        <td>{{proyecto.profesor}}</td>
+                      </tr>
+                    {% endfor %}
                   </tbody>
 
             </table>
 
         </div>
     </div>
+
+    <div class="row" id="proyectos">
+        <div class="container-fluid">
+            <div class="col-lg-md-12"> <h1 style="font-size: 3vw;font-weight: bolder;text-align: center;color: #e5b300;">Formulario</h1></div>
+            <div class="col-lg-md-12"> <h1 style="font-size: 4vw;font-weight: bolder;text-align: center;">Ingresar proyecto</h1></div>
+            <form action="{% url 'crearFormulario'%}" method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-3">
+                        <p>Nombre proyecto:</p>
+                        <input type="text" id="nombre" name="nombre">
+                    </div>
+                    <div class="col-3">
+                        <p>Estudiante:</p>
+                        <input type="text" id="estudiante" name="estudiante">
+                    </div>
+        
+                    <div class="col-3">
+                        <p>Tema:</p>
+                        <input type="text" id="tema" name="tema">
+                    </div>
+
+                    <div class="col-3">
+                        <p>Profesor:</p>
+                        <input type="text" id="profesor" name="profesor">
+                    </div>
+        
+                    <div class="col-2">
+                    <button type="submit"> ENVIAR</button>
+                    </div>
+        
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
 
     <div class="row" id="sesion" style="background-color: #005E90;">
         <div class="container-fluid">
@@ -69,19 +115,34 @@
             Veritatis fugiat fuga consequuntur voluptatem nisi delectus architecto totam dolor dicta mollitia, beatae esse facilis. Quis nisi dolor officia sed molestias, ex quaerat asperiores ullam tenetur quidem quae, dolorem optio.
             Vel delectus cupiditate papu eius deserunt aliquid.</p> <p>  </p></div> 
             <div class="formulario col-6">
-                <form method="post">
-                    <div class="email">
-                        <input type="text" required>
-                        <label>Email</label>
-                    </div>
+                {% if si != 2 %}
+                <form action="{% url 'login' %}" method="get">
+                    <label for="usuario" style="min-width: 200px;">Nombre de usuario:</label>
+                    <input type="text" id="usuario" name="usuario">
                     <br><br>
-                    <div class="contrasena">
-                        <input type="password" required>
-                        <label>Contraseña</label>   
-                    </div>
+                    <label for="contraseña">Contraseña:</label>
+                    <input type="password" id="contraseña" name="contraseña">
                     <br>
-                    <div class="d-grid gap-2 col-6"> <button class="btn btn-secondary"> Iniciar Sesión </button> </div>
+                    <br>
+                    <input type="submit" value="Entrar">
                 </form>
+    
+                <form action="{% url 'index' %}">
+                    <br>
+                    <input type="submit" value="Entrar como invitado">
+                </form>
+                {%endif%}
+    
+                {% if si == 3 %}
+                <p>Acceso Denegado.</p>
+                {%endif%}
+    
+                {% if si == 2 %}
+                <p>Acceso Concedido.</p>
+                <form action="{% url 'index' %}">
+                    <div class="d-grid gap-2 col-6"> <button class="btn btn-secondary" type="submit"> Iniciar Sesión </button> </div>
+                </form>
+                {% endif %}
             </div>
 
         </div>

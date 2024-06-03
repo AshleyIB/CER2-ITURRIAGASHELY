@@ -21,5 +21,9 @@ from myapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.base, name="base"),
+    path('', views.index, name="index"),
     path('base/',views.base, name="base"),
+    path('crearFormulario/',views.crearFormulario, name="crearFormulario"),
+    path('login/',views.login,name="login"),
+
 ]

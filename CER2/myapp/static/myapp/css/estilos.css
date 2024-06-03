@@ -44,3 +44,17 @@ body{
     width: 100%;
     margin: 0;
 }
+
+.formulario {
+    background-color: #fff;
+    padding: 12vw;
+    border-radius: 10vw;
+    margin-top: 7vw;
+    margin-bottom: 5vw;
+}
+
+.btn-secondary{
+    position: absolute;
+    background-color: #005E90;
+    color: #fff;
+}
